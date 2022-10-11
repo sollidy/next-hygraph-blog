@@ -1,6 +1,7 @@
 import Image from 'next/image'
 import { FC } from 'react'
 import styles from './Plate.module.scss'
+import samplePhoto from '../../../../assets/img/no-photo.png'
 
 import type { GetAllPostsQuery } from '../../../../utils/graphql.request'
 interface IPlate {
@@ -8,16 +9,16 @@ interface IPlate {
 }
 
 export const Plate: FC<IPlate> = ({ post }) => {
-  if (!post.coverImage) return <></>
   return (
     <div className={styles.plate}>
       <div className={styles.content}>
         <h2>{post.title}</h2>
-        <span>{post.excerpt}</span>
+        <span>{post.author?.name}</span>
+        <time>{post.date}</time>
       </div>
       <div className={styles.img}>
         <Image
-          src={post.coverImage?.url}
+          src={post.coverImage?.url ?? samplePhoto}
           alt=""
           width={640}
           layout="responsive"

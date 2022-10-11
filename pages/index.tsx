@@ -1,7 +1,6 @@
-import Head from 'next/head'
 import { GraphQLClient } from 'graphql-request'
-import { getSdk } from '../src/utils/graphql.request'
-import { NextPage, InferGetStaticPropsType } from 'next'
+import { GetAllPostsQuery, getSdk } from '../src/utils/graphql.request'
+import { NextPage } from 'next'
 import { Home } from '../src/components/screens/Home/Home'
 
 const graphcms = new GraphQLClient(process.env.GQL_API_URL || '')
@@ -18,10 +17,8 @@ export const getStaticProps = async () => {
     }
   }
 }
-const HomePage: NextPage<InferGetStaticPropsType<typeof getStaticProps>> = ({
-  posts,
-}) => {
-  if (!posts) return <></>
+
+const HomePage: NextPage<GetAllPostsQuery> = ({ posts }) => {
   return <Home posts={posts} />
 }
 export default HomePage
