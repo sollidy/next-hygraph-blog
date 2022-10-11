@@ -13,7 +13,7 @@ export const Plate: FC<IPlate> = ({ post }) => {
     <div className={styles.plate}>
       <div className={styles.content}>
         <h2>{post.title}</h2>
-        <span>{post.author?.name}</span>
+        {/* <span>{post.author?.name}</span> */}
         <time>{post.date}</time>
       </div>
       <div className={styles.img}>
@@ -24,6 +24,7 @@ export const Plate: FC<IPlate> = ({ post }) => {
           layout="responsive"
           objectFit="cover"
           height={360}
+          style={{ borderRadius: '2px' }}
         />
       </div>
     </div>
