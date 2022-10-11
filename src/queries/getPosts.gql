@@ -1,0 +1,17 @@
+query GetAllPosts {
+  posts {
+    id
+    title
+    excerpt
+    slug
+    coverImage {
+      id
+      url
+    }
+    author {
+      id
+      name
+    }
+    date
+  }
+}
