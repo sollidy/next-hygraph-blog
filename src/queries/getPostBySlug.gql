@@ -15,6 +15,10 @@ query GetPostBySlug($slug: String!) {
     author {
       id
       name
+      picture {
+        id
+        url
+      }
     }
     date
   }

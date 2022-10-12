@@ -5987,7 +5987,7 @@ export type GetPostBySlugQueryVariables = Exact<{
 }>;
 
 
-export type GetPostBySlugQuery = { __typename?: 'Query', post?: { __typename?: 'Post', id: string, title: string, slug: string, date: any, content: { __typename?: 'RichText', html: string, text: string, markdown: string }, coverImage?: { __typename?: 'Asset', id: string, url: string } | null, author?: { __typename?: 'Author', id: string, name: string } | null } | null };
+export type GetPostBySlugQuery = { __typename?: 'Query', post?: { __typename?: 'Post', id: string, title: string, slug: string, date: any, content: { __typename?: 'RichText', html: string, text: string, markdown: string }, coverImage?: { __typename?: 'Asset', id: string, url: string } | null, author?: { __typename?: 'Author', id: string, name: string, picture?: { __typename?: 'Asset', id: string, url: string } | null } | null } | null };
 
 export type GetAllPostsQueryVariables = Exact<{ [key: string]: never; }>;
 
@@ -6013,6 +6013,10 @@ export const GetPostBySlugDocument = gql`
     author {
       id
       name
+      picture {
+        id
+        url
+      }
     }
     date
   }

@@ -1,0 +1,54 @@
+.post {
+  @apply py-16 min-h-screen;
+  > .postBlock {
+    @apply shadow-lg rounded-lg mx-auto mb-16 bg-white;
+
+    > .coverImg {
+      @apply max-h-[192px] rounded-t overflow-hidden;
+    }
+
+    > .postHeader {
+      @apply mx-8 py-7 text-gray-500 border-b border-gray-200;
+      > a {
+        @apply float-right hover:underline text-green-600 cursor-pointer;
+      }
+    }
+
+    > .postContent {
+      @apply mx-8 text-gray-600 text-lg leading-8;
+      > .title {
+        @apply text-3xl leading-10 md:text-[42px] md:leading-[62px] font-black my-6 text-black;
+      }
+      > h1 {
+        @apply text-2lg font-bold my-4 text-gray-900;
+      }
+      > p {
+        @apply mb-4;
+        > code {
+          @apply bg-gray-100 whitespace-pre-line;
+        }
+      }
+
+      > blockquote {
+        @apply relative my-9 pl-7 italic text-gray-800 before:absolute;
+        &:before {
+          @apply top-0 left-0 h-full w-0.5 bg-gray-800;
+        }
+      }
+      > ol,
+      ul {
+        @apply pl-10;
+        > li {
+          @apply list-disc;
+        }
+      }
+    }
+
+    > .postAuthor {
+      @apply flex items-center mx-8 py-7;
+      > .img {
+        @apply w-12 h-auto mr-3;
+      }
+    }
+  }
+}

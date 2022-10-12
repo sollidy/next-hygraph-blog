@@ -1,4 +1,3 @@
-import Link from 'next/link'
 import { FC } from 'react'
 import type { GetAllPostsQuery } from '../../../utils/graphql.request'
 import styles from './Home.module.scss'
@@ -13,22 +12,14 @@ export const Home: FC<GetAllPostsQuery> = ({ posts }) => {
         {firstPosts.map((post) => {
           return (
             <div key={post.id} className={styles.mainGrid}>
-              <Link as={`/post/${post.slug}`} href="/post/[slug]">
-                <a>
-                  <Plate post={post} />
-                </a>
-              </Link>
+              <Plate post={post} />
             </div>
           )
         })}
         {lastPosts.map((post) => {
           return (
             <div key={post.id} className={styles.secondGrid}>
-              <Link as={`/post/${post.slug}`} href="/post/[slug]">
-                <a>
-                  <Plate post={post} />
-                </a>
-              </Link>
+              <Plate post={post} />
             </div>
           )
         })}
