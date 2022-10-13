@@ -1,14 +1,15 @@
-import Link from 'next/link'
 import { FC } from 'react'
 import styles from './Post.module.scss'
-import parse from 'html-react-parser'
-import { GetPostBySlugQuery } from '../../../utils/graphql.request'
+import { GetPostBySlugQuery } from '../../../shared/graphql.request'
 import { timeAgo } from '../../../utils/timeAgo'
 import Image from 'next/image'
+import { MdArrowBackIosNew } from 'react-icons/md'
+import { useRouter } from 'next/router'
+import { PostContent } from './PostContent/PostContent'
 
 export const Post: FC<GetPostBySlugQuery> = ({ post }) => {
+  const { push } = useRouter()
   if (!post) return <></>
-  const parsedContent = parse(post.content.html)
   return (
     <article className={styles.post}>
       <div className={styles.postBlock}>
@@ -27,10 +28,7 @@ export const Post: FC<GetPostBySlugQuery> = ({ post }) => {
           <time>{timeAgo(post.date)}</time>
           <a>Seo</a>
         </section>
-        <section className={styles.postContent}>
-          <div className={styles.title}>{post.title}</div>
-          {parsedContent}
-        </section>
+        <PostContent htmlContent={post.content.html} title={post.title} />
         <section className={styles.postAuthor}>
           <div className={styles.img}>
             <Image
@@ -45,10 +43,9 @@ export const Post: FC<GetPostBySlugQuery> = ({ post }) => {
           {post.author?.name}
         </section>
       </div>
-      <div className="max-w-lg mx-auto">
-        <Link href="/">
-          <a>Back to all posts</a>
-        </Link>
+      <div className={styles.backButton} onClick={() => push('/')}>
+        <MdArrowBackIosNew />
+        <span>Back to all posts</span>
       </div>
     </article>
   )

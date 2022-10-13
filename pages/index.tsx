@@ -1,5 +1,5 @@
 import { GraphQLClient } from 'graphql-request'
-import { GetAllPostsQuery, getSdk } from '../src/utils/graphql.request'
+import { GetAllPostsQuery, getSdk } from '../src/shared/graphql.request'
 import { NextPage } from 'next'
 import { Home } from '../src/components/screens/Home/Home'
 

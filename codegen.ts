@@ -7,7 +7,7 @@ const config: CodegenConfig = {
   schema: process.env.GQL_API_URL,
   documents: ['src/**/*.{gql,graphql}'],
   generates: {
-    'src/utils/graphql.request.ts': {
+    'src/shared/graphql.request.ts': {
       plugins: [
         'typescript',
         'typescript-operations',

@@ -1,5 +1,5 @@
 import { FC } from 'react'
-import type { GetAllPostsQuery } from '../../../utils/graphql.request'
+import type { GetAllPostsQuery } from '../../../shared/graphql.request'
 import styles from './Home.module.scss'
 import { Plate } from './Plate/Plate'
 

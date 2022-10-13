@@ -31,13 +31,19 @@ module.exports = {
     plugin(({ theme, addComponents, addUtilities }) => {
       addComponents({
         '.btn-primary': {
-          backgroundColor: '#ff0009',
+          backgroundColor: theme('backgroundColor.gray.500'),
           color: '#fff',
-          borderRadius: '0.65rem',
+          borderRadius: theme('borderRadius.lg'),
+          cursor: 'pointer',
           transition: 'background-color .3s ease-in-out',
           '&:hover': {
-            backgroundColor: '#ff0009',
+            backgroundColor: theme('backgroundColor.gray.700'),
           },
+        },
+        '.air-block': {
+          backgroundColor: '#fff',
+          boxShadow: theme('boxShadow.lg'),
+          borderRadius: theme('borderRadius.lg'),
         },
       }),
         addUtilities({

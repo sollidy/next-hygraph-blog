@@ -3,7 +3,7 @@ import { FC } from 'react'
 import styles from './Plate.module.scss'
 import samplePhoto from '../../../../assets/img/no-photo.png'
 
-import type { GetAllPostsQuery } from '../../../../utils/graphql.request'
+import type { GetAllPostsQuery } from '../../../../shared/graphql.request'
 import Link from 'next/link'
 interface IPlate {
   post: GetAllPostsQuery['posts'][number]

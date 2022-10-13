@@ -1,5 +1,5 @@
 import { GraphQLClient } from 'graphql-request'
-import { GetPostBySlugQuery, getSdk } from '../../src/utils/graphql.request'
+import { GetPostBySlugQuery, getSdk } from '../../src/shared/graphql.request'
 import { GetStaticPaths, GetStaticPropsContext, NextPage } from 'next'
 import { Post } from '../../src/components/screens/Post/Post'
 
