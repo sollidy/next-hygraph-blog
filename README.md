@@ -1,3 +1,13 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+# Next.js blog with [Graph CMS](https://hygraph.com/)
 
-**ENV**: GQL_API_URL
+`Next.js`, `Typescript`, `Tailwind`, `graphql`, `@graphql-codegen`, `graphql-request`
+
+##### DEPLOY TO
+
+https://next-hygraph-blog-ten.vercel.app
+
+##### ENV
+
+`GQL_API_URL`
+
+![Preview](https://user-images.githubusercontent.com/70297692/201502302-25da5192-cd6f-4a2f-9a47-7b8586465200.png)
