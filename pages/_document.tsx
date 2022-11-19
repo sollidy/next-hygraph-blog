@@ -4,6 +4,10 @@ export default function Document() {
   return (
     <Html lang="ru">
       <Head>
+        <meta
+          name="viewport"
+          content="width=device-width, initial-scale=1, maximum-scale=5"
+        />
         <meta name="msapplication-TileColor" content="#e5e7eb" />
         <meta name="theme-color" content={'#e5e7eb'} />
         <meta name="msapplication-navbutton-color" content={'#e5e7eb'} />
