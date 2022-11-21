@@ -12,28 +12,25 @@ interface IPlate {
 export const Plate: FC<IPlate> = ({ post }) => {
   return (
     <Link as={`/post/${post.slug}`} href="/post/[slug]">
-      <a>
-        <div className={styles.plate}>
-          <div className={styles.content}>
-            <h2>
-              <span>{post.title}</span>
-            </h2>
-            {/* <span>{post.author?.name}</span> */}
-            <time>{post.date}</time>
-          </div>
-          <div className={styles.img}>
-            <Image
-              src={post.coverImage?.url ?? samplePhoto}
-              alt="Post cover"
-              layout="responsive"
-              objectFit="cover"
-              width={640}
-              height={360}
-              style={{ borderRadius: '2px' }}
-            />
-          </div>
+      <div className={styles.plate}>
+        <div className={styles.content}>
+          <h2>
+            <span>{post.title}</span>
+          </h2>
+          {/* <span>{post.author?.name}</span> */}
+          <time>{post.date}</time>
         </div>
-      </a>
+        <div className={styles.img}>
+          <Image
+            src={post.coverImage?.url ?? samplePhoto}
+            alt="Post cover"
+            width={640}
+            height={360}
+            style={{ borderRadius: '2px' }}
+            priority
+          />
+        </div>
+      </div>
     </Link>
   )
 }

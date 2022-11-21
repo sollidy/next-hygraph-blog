@@ -4,6 +4,10 @@
 
     > .coverImg {
       @apply max-h-[192px] rounded-t overflow-hidden;
+
+      img {
+        @apply w-full h-48 object-cover;
+      }
     }
 
     > .postHeader {

@@ -17,11 +17,11 @@ export const Post: FC<GetPostBySlugQuery> = ({ post }) => {
           <Image
             src={post.coverImage?.url || ''}
             alt="Cover post"
-            layout="responsive"
-            width={640}
+            width={900}
             height={360}
             style={{ borderRadius: '2px' }}
             title={post.title}
+            priority
           />
         </div>
         <section className={styles.postHeader}>
@@ -36,7 +36,6 @@ export const Post: FC<GetPostBySlugQuery> = ({ post }) => {
               alt=""
               width={50}
               height={50}
-              layout="responsive"
               style={{ borderRadius: '40px' }}
             />
           </div>
